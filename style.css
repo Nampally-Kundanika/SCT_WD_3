@@ -1,0 +1,268 @@
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------- Body ---------- */
+
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background: #0b1026;
+    color: white;
+    padding: 20px;
+}
+/* ---------- Card ---------- */
+
+.container {
+    width: 100%;
+    max-width: 450px;
+    background: #182447;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+}
+/* ---------- Header ---------- */
+
+header{
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+}
+
+.game-title {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+/* ---------- Mode ---------- */
+
+.mode-selector {
+    margin-bottom: 20px;
+}
+
+.mode-selector select {
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.mode-selector select:hover{
+
+    border-color:#00dcff;
+
+}
+
+/* ---------- Scoreboard ---------- */
+
+.scoreboard {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.score-card {
+    flex: 1;
+    background: #22315d;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.score-value {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.score-label {
+    font-size: 14px;
+}
+.draws{
+
+    background:rgba(255,255,255,.04);
+
+}
+
+.score-icon{
+
+    display:block;
+
+    font-size:1.4rem;
+
+    margin-bottom:5px;
+
+}
+
+
+
+/* ---------- Turn ---------- */
+
+.turn-display{
+
+    text-align:center;
+
+    margin-bottom:18px;
+
+    min-height:24px;
+
+    color:#d5e7ff;
+
+    font-weight:600;
+
+}
+
+/* ---------- Board ---------- */
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 8px;
+    margin: 20px 0;
+}
+
+.cell {
+    aspect-ratio: 1;
+    background: #263b73;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.cell:hover {
+    background: #304a91;
+}
+
+.cell.taken {
+    cursor: default;
+}
+.cell.winner {
+    background: green;
+}
+
+.cell.pop{
+
+    animation:pop .25s ease;
+
+}
+
+@keyframes pop{
+
+    from{
+
+        transform:scale(.6);
+
+        opacity:.3;
+
+    }
+
+    to{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+
+/* ---------- Status ---------- */
+.status-message {
+    margin: 15px 0;
+    padding: 10px;
+    background: #304a91;
+    border-radius: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+.status-message.draw{
+
+    background:rgba(255,255,255,.06);
+
+    color:#dde6ff;
+
+}
+
+
+
+/* ---------- Buttons ---------- */
+.controls {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: #1976d2;
+    color: white;
+}
+
+.btn-secondary {
+    background: gray;
+    color: white;
+}
+
+
+
+/* ---------- Responsive ---------- */
+
+@media(max-width:480px){
+
+.container{
+
+    padding:24px 18px;
+
+}
+
+.scoreboard{
+
+    flex-direction:column;
+
+}
+
+.controls{
+
+    flex-direction:column;
+
+}
+
+.game-title{
+
+    font-size:1.55rem;
+
+}
+
+.cell{
+
+    font-size:2rem;
+
+}
+
+}
